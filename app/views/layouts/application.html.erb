@@ -11,6 +11,15 @@
   </head>
 
   <body>
+    <header>
+      <% if request.path.match(/\/admin(\/)?/) %>
+      <h1>admin</h1><%# 実装時削除 %>
+      <%= render 'layouts/header_admin' %>
+      <% else %>
+      <h1>customer</h1><%# 実装時削除 %>
+      <%= render 'layouts/header_public' %>
+      <% end %>
+    </header>
     <%= yield %>
   </body>
 </html>

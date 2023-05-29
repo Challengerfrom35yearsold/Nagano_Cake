@@ -1,0 +1,36 @@
+<div class="container">
+  LOGO
+  <% if admin_signed_in? %>
+    商品一覧
+    会員一覧
+    注文履歴一覧
+    ジャンル一覧
+
+    <li class="text-light">
+      <%= link_to(destroy_admin_session_path, method: :delete) do %>
+        ログアウト
+      <% end %>
+    </li>
+  <% else %>
+    <li class="text-light">
+      <%= link_to(about_path) do %>
+        About
+      <% end %>
+    </li>
+
+    商品一覧
+
+    <li class="text-light">
+      <%= link_to(new_customer_registration_path) do %>
+        新規登録
+      <% end %>
+    </li>
+    <li class="text-light">
+      <%= link_to(new_admin_session_path) do %>
+        ログイン
+      <% end %>
+    </li>
+  <% end %>
+  Search
+</div>
+

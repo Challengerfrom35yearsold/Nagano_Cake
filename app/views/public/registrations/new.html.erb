@@ -6,37 +6,37 @@
   <div class="field">
     <%= f.label :名前 %>
     (性)
-    <%= f.text_field :last_name, autofocus: true, autocomplete: "性" %>
+    <%= f.text_field :last_name, autofocus: true, autocomplete: "性", placeholder: "令和" %>
     (名)
-    <%= f.text_field :first_name, autocomplete: "名" %>
+    <%= f.text_field :first_name, autocomplete: "名", placeholder: "道子" %>
   </div>
 
   <div class="field">
     <%= f.label :フリガナ %>
     (セイ)
-    <%= f.text_field :last_name_kana, autocomplete: "セイ" %>
-    (メイ)
-    <%= f.text_field :first_name_kana, autocomplete: "メイ" %>
+    <%= f.text_field :last_name_kana, autocomplete: "セイ", placeholder: "レイワ" %>
+    (メイ)レイワ
+    <%= f.text_field :first_name_kana, autocomplete: "メイ", placeholder: "ミチコ" %>
   </div>
 
   <div class="field">
     <%= f.label :メールアドレス %>
-    <%= f.email_field :email, autocomplete: "email" %>
+    <%= f.email_field :email, autocomplete: "email", placeholder: "sumple@example.com" %>
   </div>
 
   <div class="field">
     <%= f.label :"郵便番号(ハイフンなし)" %>
-    <%= f.text_field :postal_code, autocomplete: "郵便番号" %>
+    <%= f.text_field :postal_code, autocomplete: "郵便番号", placeholder: "0000000" %>
   </div>
 
   <div class="field">
     <%= f.label :住所 %>
-    <%= f.text_field :address, autocomplete: "住所" %>
+    <%= f.text_field :address, autocomplete: "住所", placeholder: "東京都渋谷区代々木神園町0-0" %>
   </div>
 
   <div class="field">
     <%= f.label :"電話番号(ハイフンなし)" %>
-    <%= f.text_field :telephone_number, autocomplete: "電話番号" %>
+    <%= f.text_field :telephone_number, autocomplete: "電話番号", placeholder: "00000000000" %>
   </div>
 
   <div class="field">

@@ -1,5 +1,9 @@
 <div class="container">
-  LOGO
+  <li class="text-light">
+    <%= link_to(root_path) do %>
+      LOGO
+    <% end %>
+  </li>
   <% if admin_signed_in? %>
     商品一覧
     会員一覧

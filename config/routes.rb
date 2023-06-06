@@ -7,15 +7,15 @@ Rails.application.routes.draw do
 
     get 'customers/my_page' => 'customers#show'
     get 'customers/information/edit' => 'customers#edit'
-    get 'customers/information' => 'customers#update'
+    patch 'customers/information' => 'customers#update'
     get 'customers/unsubscribe' => 'customers#unsubscribe'
-    get 'customers/withdraw' => 'customers#withdraw'
+    patch 'customers/withdraw' => 'customers#withdraw'
 
     resources :cart_items, only: [:index, :update, :destroy, :create]
-    get 'cart_items/destroy_all' => 'cart_items#destroy_all'
+    delete 'cart_items/destroy_all' => 'cart_items#destroy_all'
 
     resources :orders, only: [:new, :create, :index, :show]
-    get 'orders/confirm' => 'orderss#comfirm'
+    post 'orders/confirm' => 'orderss#comfirm'
     get 'orders/complete' => 'orders#complete'
 
     resources :addresses, only: [:index, :edit, :create, :update, :destroy]

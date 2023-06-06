@@ -1,7 +1,16 @@
 <div class="container">
-  LOGO
+  <li class="text-light">
+    <%= link_to(root_path) do %>
+      LOGO
+    <% end %>
+  </li>
   <% if customer_signed_in? %>
-    マイページ
+    <li class="text-light">
+      <%= link_to(customers_my_page_path) do %>
+        マイページ
+      <% end %>
+    </li>
+
     商品一覧
     カート
     <li class="text-light">

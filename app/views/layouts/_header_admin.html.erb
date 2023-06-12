@@ -5,7 +5,11 @@
     <% end %>
   </li>
   <% if admin_signed_in? %>
-    商品一覧
+    <li class="text-light">
+      <%= link_to(admin_items_path) do %>
+        商品一覧
+      <% end %>
+    </li>
     会員一覧
     注文履歴一覧
     <li class="text-light">

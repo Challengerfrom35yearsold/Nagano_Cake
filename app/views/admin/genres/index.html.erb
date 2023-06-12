@@ -7,19 +7,22 @@
 <% end %>
 
 <table class="table">
+  <thead>
+    <tr>
+    　<th>ジャンル</th>
+    </tr>
+  </thead>
+
   <tbody>
     <% @genres.each do |genre| %>
-    <td>
-      ジャンル
-    </td>
-  </tbody>
-  <tbody>
-    <td>
-      <%= genre.name %>
-    </td>
-    <td>
-      <%= link_to '編集する',  edit_admin_genre_path(genre.id) %>
-    </td>
+    <tr>
+    　<td>
+        <%= genre.name %>
+      </td>
+      <td>
+        <%= link_to '編集する',  edit_admin_genre_path(genre.id) %>
+      </td>
+    </tr>
     <% end %>
   </tbody>
 

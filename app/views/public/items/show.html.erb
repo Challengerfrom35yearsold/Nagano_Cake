@@ -25,7 +25,7 @@
 
 ￥ <%= @item.price.to_s(:delimited) %> (税込)
 
-<%= form_with model: @cart_item,url: cart_items_path,method: :post  do |f| %>
+<%= form_with model: @cart_item, url: cart_items_path,method: :post  do |f| %>
   個数選択
   <%= f.select :amount, *[1..10] %>
 

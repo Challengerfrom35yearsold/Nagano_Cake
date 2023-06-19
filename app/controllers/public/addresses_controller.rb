@@ -1,7 +1,6 @@
 class Public::AddressesController < ApplicationController
   def index
     @address = Address.new
-
     @addresses = current_customer.addresses
 
     # current_customer.呼び出したいアソシエーション で関連するデータを取得できる

@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
     <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
@@ -13,10 +14,10 @@
   <body>
     <header>
       <% if request.path.match(/\/admin(\/)?/) %>
-      <h1>admin</h1><%# 実装時削除 %>
+      <%#<h1>admin</h1> 実装時削除 %>
       <%= render 'layouts/header_admin' %>
       <% else %>
-      <h1>customer</h1><%# 実装時削除 %>
+      <%# <h1>customer</h1>実装時削除 %>
       <%= render 'layouts/header_public' %>
       <% end %>
     </header>

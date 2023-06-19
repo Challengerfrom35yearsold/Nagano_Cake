@@ -1,4 +1,17 @@
-ようこそ、ながのCAKEへ！
-このサイトは、ケーキ販売のECサイトになります。
-会員でない方商品の閲覧はできますが、
-購入には会員登録が必要になります。
+<%= render 'layouts/genre_search', genres:@genres %>
+
+ようこそ、ながのCAKEへ！ <br />
+このサイトは、ケーキ販売のECサイトになります。 <br />
+会員でない方商品の閲覧はできますが、 <br />
+購入には会員登録が必要になります。 <br />
+
+新着商品 <br />
+<% @items.each do |item| %>
+  <%= link_to(item_path(item.id)) do %>
+  <%= image_tag item.get_item_image(100,100) %>
+  <%= item.name %>
+  <%= item.price %>
+  <% end %> <br />
+<% end %>
+
+<%= link_to "全ての商品を見る＞", items_path %>

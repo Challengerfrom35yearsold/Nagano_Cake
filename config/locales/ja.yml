@@ -19,3 +19,7 @@
     time:
       formats:
         default: "%Y/%m/%d %H:%M:%S"
+    views:
+      pagination:
+        next: "Next &rsaquo;"
+        last: "Last &raquo;"

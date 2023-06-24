@@ -1,19 +1,49 @@
-<%= render 'layouts/genre_search', genres:@genres %>
-
-<%= image_tag @item.get_item_image(100,100) %>
-
-<%= @item.name %>
-
-<%= @item.introduction %>
-
-￥ <%= @item.price.to_s(:delimited) %> (税込)
-
-<%= form_with model: @cart_item, url: cart_items_path,method: :post  do |f| %>
-  個数選択
-  <%= f.select :amount, *[1..10] %>
-
-  <%= f.hidden_field :item_id, :value => @item.id %>
-
-  <%= f.submit 'カートに入れる' %>
-
-<% end %>
+<div class="container px-5 px-sm-0">
+  <div class="row">
+    <div class="col-md-3">
+      <%= render 'layouts/genre_search', genres:@genres %>
+    </div>
+    <div class="d-flex col-md-3 mb-3 justify-content-center">
+      <%= image_tag @item.get_item_image(200,200) %>
+    </div>
+    <div class="col-md-6">
+      <div class="row">
+        <div class="col-md-12 mb-2">
+          <h3>
+            <%= @item.name %>
+          </h3>
+        </div>
+        <div class="col-md-12 mb-5">
+          <h4>
+            <%= @item.introduction %>
+          </h4>
+        </div>
+        <div class="col-md-12 mb-4 d-flex align-items-center">
+          <h4>
+            ￥<%= @item.price.to_s(:delimited) %><span style="font-size:70%">(税込)</span>
+          </h4>
+        </div>
+        <!--上記の書き方で"(税込)"を中央寄せする方法-->
+        <!--<div class="col-md-12 mb-4 d-flex align-items-center">-->
+          <!--<div style="font-size:1.5rem; font-weight:bold;">-->
+            <%#= @item.price.to_s(:delimited) %>
+          <!--</div>-->
+          <!--<div class="ml-2" style="font-size:80%">(税込)</div>-->
+        <!--</div>-->
+        <div class="col-md-12 mb-2">
+          <%= form_with model: @cart_item, url: cart_items_path,method: :post  do |f| %>
+          <div class="row">
+            <div class="col-md-5">
+              個数選択<%= f.select :amount, *[1..10], { include_blank: '選択してください'}, {class: "form-control w-55"} %>
+            </div>
+            <%= f.hidden_field :item_id, :value => @item.id %>
+            <div class="col-md-5">
+              <%= f.submit 'カートに入れる', class:"btn btn-success btn-block" %>
+            </div>
+          </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

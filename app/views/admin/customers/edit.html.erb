@@ -1,41 +1,97 @@
-<h1>
-  <%= @customer.last_name + @customer.first_name %>さんの
-  会員情報編集
-</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 mb-3 d-flex align-items-center justify-content-center">
+      <h3 class="px-2" style="background-color: #c1c7cd !important;">
+        <%= @customer.last_name + @customer.first_name %>さんの会員情報編集
+      </h3>
+    </div>
+  </div>
 
-<%= form_with model: @customer,url: admin_customer_path, method: :patch  do |f| %>
-
-  会員ID
-  <%= @customer.id %> <br />
-
-  氏名
-  <%= f.text_field :last_name %>
-  &nbsp;
-  <%= f.text_field :first_name %> <br />
-
-  フリガナ
-  <%= f.text_field :last_name_kana %>
-  &nbsp;
-  <%= f.text_field :first_name_kana %> <br />
-
-  郵便番号
-  <%= f.text_field :postal_code %> <br />
-
-  住所
-  <%= f.text_field :address %> <br />
-
-  電話番号
-  <%= f.text_field :telephone_number %> <br />
-
-  メールアドレス
-  <%= f.text_field :email %> <br />
-
-　会員ステータス
-　<%= f.radio_button :is_deleted, false %>
-  <%= f.label :is_deleted, "有効" %>
-　<%= f.radio_button :is_deleted, true %>
-  <%= f.label :is_deleted, "退会" %> <br />
-
-　<%= f.submit '変更を保存' %>
-
-<% end %>
+  <%= form_with model: @customer,url: admin_customer_path, method: :patch  do |f| %>
+  <div class="row">
+    <div class="col-md-2 mb-2">
+      会員ID
+    </div>
+    <div class="col-md-3 mb-2">
+      <%= @customer.id %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-2 mb-2">
+      氏名
+    </div>
+    <div class="col-md-8 mb-2">
+      <div class="row">
+        <div class="col-md-3 mb-2">
+          <%= f.text_field :last_name, class: "rounded" %>
+        </div>
+        <div class="col-md-3 offset-md-1 mb-2">
+          <%= f.text_field :first_name, class: "rounded" %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-2 mb-2">
+      フリガナ
+    </div>
+    <div class="col-md-8 mb-2">
+      <div class="row">
+        <div class="col-md-3 mb-2">
+          <%= f.text_field :last_name_kana, class: "rounded" %>
+        </div>
+        <div class="col-md-3 offset-md-1 mb-2">
+          <%= f.text_field :first_name_kana, class: "rounded" %>
+         </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-2 mb-2">
+      郵便番号
+    </div>
+    <div class="col-md-3 mb-2">
+      <%= f.text_field :postal_code, class: "rounded" %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-2 mb-2">
+      住所
+    </div>
+    <div class="col-md-3 mb-2">
+      <%= f.text_field :address, size: "75", class: "rounded" %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-2 mb-2">
+      電話番号
+    </div>
+    <div class="col-md-3 mb-2">
+      <%= f.text_field :telephone_number, class: "rounded" %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-2 mb-2">
+      メールアドレス
+    </div>
+    <div class="col-md-3 mb-2">
+      <%= f.text_field :email, class: "rounded" %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-2 mb-2">
+      会員ステータス
+    </div>
+    <div class="col-md-3 mb-2">
+      <%= f.radio_button :is_deleted, false %>
+      <%= f.label :is_deleted, "有効" %>
+      &nbsp;
+      <%= f.radio_button :is_deleted, true %>
+      <%= f.label :is_deleted, "退会" %>
+    </div>
+  </div>
+  <div class="col-md-3 offset-md-2">
+    <%= f.submit '変更を保存', class:"btn btn-success btn-block" %>
+  </div>
+  <% end %>
+</div>

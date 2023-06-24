@@ -1,20 +1,53 @@
-<h2>ログイン</h2>
+<div class="container px-1">
+  <div class="row">
+    <div class="col-md-3 mb-2 d-flex align-items-center justify-content-center">
+      <h3 class="px-2" style="background-color: #c1c7cd !important;">ログイン</h3>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6 mb-2 d-flex align-items-center justify-content-center">
+      <h5>会員の方はこちらからログイン</h3>
+    </div>
+  </div>
 
 <%= form_with model: @customer, url: customer_session_path do |f| %>
-  <div class="field">
-    <%= f.label :メールアドレス %>
-    <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "sumple@example.com" %>
+
+  <div class="row">
+    <div class="col-md-2 offset-md-2 mb-2">
+      <%= f.label :メールアドレス %>
+    </div>
+    <div class="col-md-2 mb-2">
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "sumple@example.com", size: "50", class: "rounded" %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= f.label :パスワード %>
-    <%= f.password_field :password, autocomplete: "current-password" %>
+  <div class="row">
+    <div class="col-md-2 offset-md-2 mb-2">
+      <%= f.label :パスワード %>
+    </div>
+    <div class="col-md-2 mb-2">
+      <%= f.password_field :password, autocomplete: "current-password", size: "50", class: "rounded" %>
+    </div>
   </div>
 
-  <div class="actions">
-    <%= f.submit "ログイン" %>
+  <div class="row">
+    <div class="col-md-2 offset-md-4 mb-3 ">
+      <%= f.submit "ログイン", class:"btn btn-primary btn-block" %>
+    </div>
   </div>
 <% end %>
+</div>
 
-会員登録がお済みでない方　<br />
-<%= render "public/shared/links" %>から新規登録を行ってください。
+<div class="container px-1">
+  <div class="row">
+    <div class="col-md-6 mb-2 d-flex align-items-center justify-content-center">
+      <h5>会員登録がお済みでない方</h5>　<br />
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-5 offset-md-2 mb-2">
+      <%= render "public/shared/links" %>から新規登録を行ってください。
+    </div>
+  </div>
+</div>

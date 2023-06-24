@@ -2,6 +2,9 @@
   <a class="navbar-brand p-3" href="/">LOGO</a>
   <ul class="nav justify-content-end p-3">
     <% if customer_signed_in? %>
+      <div class="pr-5">
+      ようこそ<%= current_customer.last_name %>さん！
+      </div>
       <li class="nav-item pr-3">
         <%= link_to(customers_my_page_path) do %>
           マイページ
